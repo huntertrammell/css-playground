@@ -1,21 +1,61 @@
 // ELEMENT ID'S
 const ADD_ELEMENT_ID = "add-element";
+const PLAYGROUND_ID = "flex-playground";
 const JUSTIFY_SELECT_ID = "flex-justify";
 const ALIGN_SELECT_ID = "flex-align";
-const SIZE_INPUT_ID = "flex-size";
-const PLAYGROUND_ID = "flex-playground";
+const WRAP_INPUT_ID = "flex-wrap";
+const GROW_INPUT_ID = "flex-grow";
+const SHRINK_INPUT_ID = "flex-shrink";
+const BASIS_INPUT_ID = "flex-basis";
+const DIRECTION_INPUT_ID = "flex-direction"
+const SIZE_INPUT_ID = "flex-box-size";
 
 // CSS Variables
 const ALIGN_PROPERTY = "--align-items";
 const JUSTIFY_PROPERTY = "--justify-content";
 const SIZE_PROPERTY = "--box-size";
+const WRAP_PROPERTY = "--flex-wrap";
+const GROW_PROPERTY = "--flex-grow";
+const SHRINK_PROPERTY = "--flex-shrink";
+const BASIS_PROPERTY = "--flex-basis";
+const DIRECTION_PROPERTY = "--flex-direction";
 
 class FlexBoxPlayground {
   playground: HTMLElement;
+  inputs: { el: HTMLInputElement; property: string }[];
 
   constructor() {
     this.playground = document.getElementById(PLAYGROUND_ID);
-
+    this.inputs = [
+      {
+        el: document.getElementById(JUSTIFY_SELECT_ID) as HTMLInputElement,
+        property: JUSTIFY_PROPERTY,
+      },
+      {
+        el: document.getElementById(ALIGN_SELECT_ID) as HTMLInputElement,
+        property: ALIGN_PROPERTY,
+      },
+      {
+        el: document.getElementById(WRAP_INPUT_ID) as HTMLInputElement,
+        property: WRAP_PROPERTY,
+      },
+      {
+        el: document.getElementById(GROW_INPUT_ID) as HTMLInputElement,
+        property: GROW_PROPERTY,
+      },
+      {
+        el: document.getElementById(SHRINK_INPUT_ID) as HTMLInputElement,
+        property: SHRINK_PROPERTY,
+      },
+      {
+        el: document.getElementById(BASIS_INPUT_ID) as HTMLInputElement,
+        property: BASIS_PROPERTY,
+      },
+      {
+        el: document.getElementById(DIRECTION_INPUT_ID) as HTMLInputElement,
+        property: DIRECTION_PROPERTY,
+      },
+    ];
     this.init();
   }
 
@@ -27,22 +67,10 @@ class FlexBoxPlayground {
       this.addElement();
     });
 
-    // Change Justify
-    const justify_select = document.getElementById(
-      JUSTIFY_SELECT_ID
-    ) as HTMLSelectElement;
-    justify_select.addEventListener("change", () => {
-      const value = justify_select.value;
-      this.updateVariable(JUSTIFY_PROPERTY, value);
-    });
-
-    // Change Align
-    const align_select = document.getElementById(
-      ALIGN_SELECT_ID
-    ) as HTMLSelectElement;
-    align_select.addEventListener("change", () => {
-      const value = align_select.value;
-      this.updateVariable(ALIGN_PROPERTY, value);
+    this.inputs.forEach((input) => {
+      input.el.addEventListener("change", () => {
+        this.updateVariable(input.property, input.el.value);
+      });
     });
 
     // Change size
@@ -57,6 +85,8 @@ class FlexBoxPlayground {
 
   addElement() {
     const div = document.createElement("div");
+    const num = this.playground.getElementsByTagName("div").length + 1;
+    div.textContent = `${num}`;
     this.playground.appendChild(div);
   }
 

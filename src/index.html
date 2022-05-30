@@ -29,8 +29,8 @@
           <h1>Interactive CSS Examples</h1>
           <p>
             Welcome to my CSS playground! Here you will find different examples
-            of how to use different css properties such as FlexBox. More will be
-            added soon so be sure to check back often as I continue to build
+            of how to use different css properties such as Flexbox. More will be
+            added soon so be sure to check back as I continue to build
             this project. I built this using TypeScript, SCSS and Webpack.
           </p>
           <a class="button" href="#flex">Get Started</a>
@@ -41,11 +41,12 @@
       </div>
     </section>
     <section id="flex" class="section-flex">
-      <div class="section-flex-main">
-        <h2>FlexBox</h2>
+      <div class="section-flex-main"> 
+        <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank" rel="noopener noreferrer"><h2>Flexbox</h2></a>
         <div class="section-flex-playground" id="flex-playground">
-          <div></div>
-          <div></div>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
           <button class="button" id="add-element">Add</button>
         </div>
         <div class="section-flex-controls">
@@ -55,6 +56,7 @@
               <option value="center">Center</option>
               <option value="flex-start">Flex Start</option>
               <option value="flex-end">Flex End</option>
+              <option value="stretch">Stretch</option>
             </select>
           </fieldset>
           <fieldset>
@@ -63,13 +65,44 @@
               <option value="center">Center</option>
               <option value="space-between">Space Between</option>
               <option value="space-around">Space Around</option>
+              <option value="space-evenly">Space Evenly</option>
               <option value="flex-start">Flex Start</option>
               <option value="flex-end">Flex End</option>
+              <option value="stretch">Stretch</option>
             </select>
           </fieldset>
           <fieldset>
+            <legend>Flex Wrap</legend>
+            <select name="flex-wrap" id="flex-wrap">
+              <option value="wrap">Wrap</option>
+              <option value="no-wrap">No Wrap</option>
+              <option value="wrap-reverse">Wrap Reverse</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <legend>Flex Direction</legend>
+            <select name="flex-direction" id="flex-direction">
+              <option value="row">Row</option>
+              <option value="row-reverse">Row Reverse</option>
+              <option value="column">Column</option>
+              <option value="column-reverse">Column Reverse</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <legend>Flex Grow</legend>
+            <input type="input" id="flex-grow" value="1"/>
+          </fieldset>
+          <fieldset>
+            <legend>Flex Shrink</legend>
+            <input type="input" id="flex-shrink" value="0" />
+          </fieldset>
+          <fieldset>
+            <legend>Flex Basis</legend>
+            <input type="input" id="flex-basis" value="0" />
+          </fieldset>
+          <fieldset>
             <legend>Box Size</legend>
-            <input type="number" min="1" step="1" id="flex-size" />
+            <input type="number" min="1" step="1" id="flex-box-size" value="50"/>
           </fieldset>
         </div>
       </div>
