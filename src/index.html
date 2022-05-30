@@ -1,12 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Emulator</title>
-</head>
-<body>
-    <h1>Hello World</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Playground</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <h2>CSS Playground</h2>
+        <!-- <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="#flex">Flex</a>
+          </li>
+          <li>
+            <a href="#grid">Grid</a>
+          </li>
+        </ul> -->
+      </nav>
+    </header>
+    <section class="hero">
+      <div class="hero-main">
+        <div class="hero-title">
+          <h1>Interactive CSS Examples</h1>
+          <p>
+            Welcome to my CSS playground! Here you will find different examples
+            of how to use different css properties such as FlexBox. More will be
+            added soon so be sure to check back often as I continue to build
+            this project. I built this using TypeScript, SCSS and Webpack.
+          </p>
+          <a class="button" href="#flex">Get Started</a>
+        </div>
+        <div class="hero-graphic">
+          <img src="assets/web-dev.svg" alt="web development, js, css, html" />
+        </div>
+      </div>
+    </section>
+    <section id="flex" class="section-flex">
+      <div class="section-flex-main">
+        <h2>FlexBox</h2>
+        <div class="section-flex-playground" id="flex-playground">
+          <div></div>
+          <div></div>
+          <button class="button" id="add-element">Add</button>
+        </div>
+        <div class="section-flex-controls">
+          <fieldset>
+            <legend>Align Items</legend>
+            <select name="flex-align" id="flex-align">
+              <option value="center">Center</option>
+              <option value="flex-start">Flex Start</option>
+              <option value="flex-end">Flex End</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <legend>Justify Content</legend>
+            <select name="flex-justify" id="flex-justify">
+              <option value="center">Center</option>
+              <option value="space-between">Space Between</option>
+              <option value="space-around">Space Around</option>
+              <option value="flex-start">Flex Start</option>
+              <option value="flex-end">Flex End</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <legend>Box Size</legend>
+            <input type="number" min="1" step="1" id="flex-size" />
+          </fieldset>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

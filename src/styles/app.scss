@@ -1,4 +1,17 @@
-@import "variables";
+@import "base/variables";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,800;1,100;1,400;1,800&display=swap');
+@import "base/global";
+@import "base/root";
 
-// Base
-@import "base/sr-only";
+// Components
+@import "components/button";
+
+// Utilities
+@import "utils/sr-only";
+@import "utils/grid";
+@import "utils/flex";
+
+// Layout
+@import "layout/header";
+@import "layout/hero";
+@import "layout/flex";

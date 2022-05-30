@@ -1,3 +1,2 @@
 import "./styles/app.scss";
-
-console.log("hello world")
+import "./app/flexbox.ts";

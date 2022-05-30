@@ -1,0 +1,33 @@
+.header {
+  color: $white;
+  background-color: $space-cadet;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  nav,
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  nav {
+    padding: 0 1rem;
+  }
+
+
+//   ul {
+//     list-style-type: none;
+//     margin-left: auto;
+//     li {
+//       padding: 0.5rem 1rem;
+//       &:last-of-type {
+//         padding: 0.5rem 0 0.5rem 1rem;
+//       }
+//       a {
+//         color: inherit;
+//         text-decoration: none;
+//       }
+//     }
+//   }
+}
